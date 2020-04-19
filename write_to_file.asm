@@ -8,29 +8,29 @@ extern printf
 section .data
     test_str db "Hello", 0x0a, 0x0
     path db "hello.txt", 0x0
-	mode db "w", 0x0
+    mode db "w", 0x0
     str_text db "Hello, World!", 0x0a, 0x0
     len_str equ $ -str_text
 
 section .text
 main:
-	;prolog
+    ;prolog
     push ebp
     mov ebp, esp
 
-	;open
+    ;open
     push mode
     push path
     call fopen
 
-	;validation of fp
-	cmp eax, 0x0
-	je error
-    
+    ;validation of fp
+    cmp eax, 0x0
+    je error
+
     ;backup fp
     mov ebx, eax
-    
-	;write
+
+    ;write
 	push eax
 	push len_str
 	push 1
@@ -45,7 +45,7 @@ main:
 error:
 	;clear return value
 	mov eax, 0x0
-	
+
 	;end prolog
     mov esp, ebp
     pop ebp
