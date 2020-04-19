@@ -31,22 +31,22 @@ main:
     mov ebx, eax
 
     ;write
-	push eax
-	push len_str
-	push 1
-	push str_text
-	call fwrite
+    push eax
+    push len_str
+    push 1
+    push str_text
+    call fwrite
 
-	;close
-	push ebx
-	call fclose
-	mov ebx, 0x0
+    ;close
+    push ebx
+    call fclose
+    mov ebx, 0x0
 
 error:
-	;clear return value
-	mov eax, 0x0
+    ;clear return value
+    mov eax, 0x0
 
-	;end prolog
+    ;end prolog
     mov esp, ebp
     pop ebp
 
