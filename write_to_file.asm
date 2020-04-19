@@ -6,8 +6,7 @@ extern fwrite
 extern printf
 
 section .data
-    test_str db "Hello", 0x0a, 0x0
-    path db "hello.txt", 0x0
+    name db "hello.txt", 0x0
     mode db "w", 0x0
     str_text db "Hello, World!", 0x0a, 0x0
     len_str equ $ -str_text
@@ -20,7 +19,7 @@ main:
 
     ;open
     push mode
-    push path
+    push name
     call fopen
 
     ;validation of fp
