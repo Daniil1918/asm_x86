@@ -45,7 +45,7 @@ error:
     ;clear return value
     mov eax, 0x0
 
-    ;end prolog
+    ;epilog
     mov esp, ebp
     pop ebp
 
