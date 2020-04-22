@@ -3,7 +3,6 @@ global main
 extern fopen
 extern fclose
 extern fwrite
-extern printf
 
 section .data
     name db "hello.txt", 0x0
